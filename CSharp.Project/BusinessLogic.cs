@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharp.Project
 {
-    public class Class1
+    public class BusinessLogic
     {
     }
 }
