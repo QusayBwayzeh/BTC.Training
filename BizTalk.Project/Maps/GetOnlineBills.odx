@@ -1,0 +1,798 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="9b59d962-59cb-48c6-aac3-99d9e2936963" LowerBound="1.1" HigherBound="233.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="A4SADAD.Biller.SCEC.BillUpload" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="3cad9313-985b-4773-97bb-dfc454d32385" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SQLKAUBills" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="dbcfb9d5-2a81-4ea4-9143-76e8bfade9d7" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveBillsFromIS" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="624357d5-bcc6-4a04-89d5-90cc6743cf90" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.24">
+                    <om:Property Name="Ref" Value="A4SADAD.Biller.SCEC.BillUpload.OnlineBills" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="abc7623e-f1e0-4d99-bfad-8b4144830f46" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="XMLBills" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="b97bf094-8263-443c-b882-d424f4f95e9c" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendXmlToA4s" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="7e1fe43f-24f0-4926-8dd3-1a5c7faacb0e" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.85">
+                    <om:Property Name="Ref" Value="A4SADAD.Biller.BusinessLogic.Processes.BillUpload.BillingSys.BillLoadXml" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="17622f05-e8ac-4a12-be23-f99fea821820" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="OnlineConfirmationType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="56e0c172-a35c-44ef-b35b-c74b5488d126" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="46b16b98-2f7f-453e-ace1-8fefe0dde79e" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.46">
+                    <om:Property Name="Ref" Value="A4SADAD.Biller.SCEC.BillUpload.OnlineConfirmation.ConfirmationRq" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="56ec9c30-a643-43a5-a718-c08da55df484" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="22.48" HigherBound="22.81">
+                    <om:Property Name="Ref" Value="A4SADAD.Biller.SCEC.BillUpload.OnlineConfirmation.ConfirmationRs" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="c36ea7f9-5055-4c29-bddd-cc2574f91ff4" ParentLink="Module_PortType" LowerBound="25.1" HigherBound="32.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SQLOnlineConfirmation" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="191c24ab-e5ae-486a-abab-ffe06d48decd" ParentLink="PortType_OperationDeclaration" LowerBound="27.1" HigherBound="31.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="e0282091-8613-48ac-bebf-b322f5e187b6" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="29.13" HigherBound="29.46">
+                    <om:Property Name="Ref" Value="A4SADAD.Biller.SCEC.BillUpload.OnlineConfirmation.ConfirmationRq" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="269ab72d-5f28-4b0f-8817-25f8d88a3f03" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="29.48" HigherBound="29.81">
+                    <om:Property Name="Ref" Value="A4SADAD.Biller.SCEC.BillUpload.OnlineConfirmation.ConfirmationRs" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="5a11da5e-80fd-438c-950f-9adc75405631" ParentLink="Module_PortType" LowerBound="32.1" HigherBound="39.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_3" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="25931b64-4bd4-4d0f-86ed-52dc5c96f040" ParentLink="PortType_OperationDeclaration" LowerBound="34.1" HigherBound="38.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="2694940f-135a-428a-b866-d202f2b2a095" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="36.13" HigherBound="36.23">
+                    <om:Property Name="Ref" Value="A4SADAD.Biller.SCEC.BillUpload.BatchBills" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="16756ccc-de28-405b-b01f-ca899a85d84b" ParentLink="Module_ServiceDeclaration" LowerBound="39.1" HigherBound="232.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="GetOnlineBills" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="65b231d3-3073-41de-807d-e8f6a9227bf9" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="51.1" HigherBound="52.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="confirmationXmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="6530a3f3-8965-4a2b-b9d4-1eab5e65e1fe" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="52.1" HigherBound="53.1">
+                <om:Property Name="InitialValue" Value="&quot;GetOnlineBills&quot;" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="orchestrationName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="a283891e-37ac-46cd-967e-e16e87a30de4" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="53.1" HigherBound="54.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="tempXmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="a09d63d9-87fa-4461-af15-23315b5508f5" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="54.1" HigherBound="55.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="recordsCount" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="8896777d-ca49-4b78-a0a1-db5fc0bf609f" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="55.1" HigherBound="56.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="index" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="818d1a5f-89e1-425a-bb8f-f560b1752aee" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="56.1" HigherBound="57.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="XPath" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="c2f89d6f-bd1d-40bb-8d64-268397e6c786" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="57.1" HigherBound="58.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ErrorMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="0130fdc0-2bb1-4ee2-81f3-79f6aba8da7c" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="58.1" HigherBound="59.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sequenceNumber" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="53059a8c-4686-4684-8aed-f83ecde2947b" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="59.1" HigherBound="60.1">
+                <om:Property Name="InitialValue" Value="true" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="tryResend" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="2b4fa9f5-19b0-440a-8423-9795e746e4d6" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="60.1" HigherBound="61.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="tempBillsBatch" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="7984e2de-b05f-47d1-887f-f3fab7991223" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="61.1" HigherBound="62.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="_xmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="b339d9f1-fb27-4dfc-8da4-0ebfbc935f10" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="62.1" HigherBound="63.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="tempXmlString" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="70597f5a-00e5-4b5b-a8ff-913969d80792" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="44.1" HigherBound="45.1">
+                <om:Property Name="Type" Value="A4SADAD.Biller.SCEC.BillUpload.OnlineBills" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ModBillsMsg" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="5a94746b-0df3-42db-9579-5a6f8474e32f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="45.1" HigherBound="46.1">
+                <om:Property Name="Type" Value="A4SADAD.Biller.BusinessLogic.Processes.BillUpload.BillingSys.BillLoadXml" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="A4SBillRs" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="6037032c-06f7-4b47-9b2d-2ac32aa3da19" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="46.1" HigherBound="47.1">
+                <om:Property Name="Type" Value="A4SADAD.Biller.SCEC.BillUpload.OnlineBills" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="BillsMsg" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="0c79be7a-81c0-47ca-93d1-c458aac5c3d6" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="47.1" HigherBound="48.1">
+                <om:Property Name="Type" Value="A4SADAD.Biller.BusinessLogic.Processes.BillUpload.BillingSys.BillLoadXml" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="A4SBillRq" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="39ece4e8-aae9-4285-bce1-64d889bab093" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="48.1" HigherBound="49.1">
+                <om:Property Name="Type" Value="A4SADAD.Biller.SCEC.BillUpload.BillRec" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="BillRecMsg" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="5bbe83fa-d121-4dd4-9836-ae1de80f05d8" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="49.1" HigherBound="50.1">
+                <om:Property Name="Type" Value="A4SADAD.Biller.SCEC.BillUpload.OnlineConfirmation.ConfirmationRq" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ConfrimationRq" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="f5c28560-fc07-485e-b376-9552eace19a6" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="Type" Value="A4SADAD.Biller.SCEC.BillUpload.OnlineConfirmation.ConfirmationRs" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ConfirmationRs" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="f2d87d73-c6b0-426b-9fef-c188960a6f12" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Scope" OID="e0eb5947-054b-4b87-9038-8518e81f9aaa" ParentLink="ServiceBody_Statement" LowerBound="65.1" HigherBound="230.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="GetOnlineBillsScope" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Receive" OID="84e90ca4-8798-46d4-a58d-adead3689be1" ParentLink="ComplexStatement_Statement" LowerBound="70.1" HigherBound="81.1">
+                        <om:Property Name="Activate" Value="True" />
+                        <om:Property Name="PortName" Value="SQLBillsPort" />
+                        <om:Property Name="MessageName" Value="BillsMsg" />
+                        <om:Property Name="OperationName" Value="ReceiveBillsFromIS" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ReceiveOnlineBills" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="317f2d63-c271-4e73-8d24-a30e689a481f" ParentLink="ComplexStatement_Statement" LowerBound="81.1" HigherBound="85.1">
+                        <om:Property Name="Expression" Value="A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,&quot;Enter&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Log Enter" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="52602c9d-e6a5-476c-8871-a6b586b3ec7c" ParentLink="ComplexStatement_Statement" LowerBound="85.1" HigherBound="92.1">
+                        <om:Property Name="Expression" Value="A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,&quot;Initialize&quot;);&#xD;&#xA;index=0;&#xD;&#xA;recordsCount=0;&#xD;&#xA;tryResend=false;&#xD;&#xA;sequenceNumber=0;&#xD;&#xA;tempBillsBatch=BillsMsg;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Initialize" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="bf46952a-bbde-4d0e-83d9-0ca214d4166c" ParentLink="ComplexStatement_Statement" LowerBound="92.1" HigherBound="105.1">
+                        <om:Property Name="Expression" Value="tempBillsBatch=BillsMsg;&#xD;&#xA;tempXmlString=tempBillsBatch.InnerXml;&#xD;&#xA;tempXmlString=tempXmlString.Replace(@&quot;&lt;BillsBatch xmlns=&quot;&quot;http://A4SADAD.Biller.SCEC.BillsBatch&quot;&quot;&gt;&quot;,&quot;&quot;);&#xD;&#xA;                                                                &#xD;&#xA;tempXmlString=tempXmlString.Replace(&quot;&lt;/BillsBatch&gt;&quot;,&quot;&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;tempBillsBatch.LoadXml(tempXmlString);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Modify Xml String" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Construct" OID="f0abaa43-1137-4ca9-96ff-94b1ef29d080" ParentLink="ComplexStatement_Statement" LowerBound="105.1" HigherBound="111.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructMessage_1" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageAssignment" OID="2675a3f5-145e-4e66-b2a9-3ce4ebedd25c" ParentLink="ComplexStatement_Statement" LowerBound="108.1" HigherBound="110.1">
+                            <om:Property Name="Expression" Value="ModBillsMsg=tempBillsBatch;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="MessageAssignment_3" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="dd34d535-b5d5-4546-bd0b-f4f44cb5e222" ParentLink="Construct_MessageRef" LowerBound="106.31" HigherBound="106.42">
+                            <om:Property Name="Ref" Value="ModBillsMsg" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="7448f23e-236f-4bff-90a3-12903f714008" ParentLink="ComplexStatement_Statement" LowerBound="111.1" HigherBound="115.1">
+                        <om:Property Name="Expression" Value="&#xD;&#xA;recordsCount =xpath(ModBillsMsg,&quot;count(/*[local-name()='BillsBatch' and namespace-uri()='http://A4SADAD.Biller.SCEC.BillsBatch']/*[local-name()='BillRec' and namespace-uri()=''])&quot;);&#xD;&#xA;A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,&quot;recordsCount=&quot; + recordsCount.ToString());&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="GetNumberOfRecords" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="a8626d58-abf3-4cca-bc72-bee9f0feb9d2" ParentLink="ComplexStatement_Statement" LowerBound="115.1" HigherBound="120.1">
+                        <om:Property Name="Expression" Value="A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,&quot;Initialize the confirmation Message&quot;);&#xD;&#xA;tempXmlDoc=BillsMsg;&#xD;&#xA;confirmationXmlDoc.LoadXml(tempXmlDoc.OuterXml);&#xD;&#xA;A4SADAD.Biller.SCEC.Common.Utility.AddNamespacePrefix(&quot;BillsBatch&quot;,ref confirmationXmlDoc);&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructDefaultResponse" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="While" OID="5cc42272-aed9-42cb-af4d-e164e8910ab2" ParentLink="ComplexStatement_Statement" LowerBound="120.1" HigherBound="198.1">
+                        <om:Property Name="Expression" Value="index&lt;recordsCount" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="LoopAllOnlineBills" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Scope" OID="241bbc7c-73e4-45b6-9af7-602a9a8e4d88" ParentLink="ComplexStatement_Statement" LowerBound="123.1" HigherBound="193.1">
+                            <om:Property Name="InitializedTransactionType" Value="True" />
+                            <om:Property Name="IsSynchronized" Value="False" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="LoopOnlineBills" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="VariableAssignment" OID="9e1379a0-5fd3-40ad-85fd-2eaaef28beed" ParentLink="ComplexStatement_Statement" LowerBound="128.1" HigherBound="130.1">
+                                <om:Property Name="Expression" Value="A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,&quot;Construct BillRec&quot;);&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Log Flow" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Construct" OID="ad8596b4-292b-4501-83ea-b3996d58f40b" ParentLink="ComplexStatement_Statement" LowerBound="130.1" HigherBound="146.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ConstructBillRec" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessageRef" OID="77f15b09-d95b-444e-af31-bfa6e562ecde" ParentLink="Construct_MessageRef" LowerBound="131.43" HigherBound="131.53">
+                                    <om:Property Name="Ref" Value="BillRecMsg" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessageAssignment" OID="c03cabc5-82b8-47e0-96d3-edbde88d0fe0" ParentLink="ComplexStatement_Statement" LowerBound="133.1" HigherBound="145.1">
+                                    <om:Property Name="Expression" Value="XPath=&quot;/*[local-name()='BillsBatch' and namespace-uri()='http://A4SADAD.Biller.SCEC.BillsBatch']/*[local-name()='BillRec' and namespace-uri()=''][&quot;+System.Convert.ToString(index+1)+&quot;]&quot;;&#xD;&#xA;tempXmlDoc = xpath(BillsMsg,XPath);&#xD;&#xA;&#xD;&#xA;A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,&quot;tempXmlDoc is before:-&quot;+tempXmlDoc.OuterXml);&#xD;&#xA;&#xD;&#xA;A4SADAD.Biller.SCEC.BusinessLogic.BillUpload.AddBillRecNameSpace(ref tempXmlDoc);&#xD;&#xA;&#xD;&#xA;A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,&quot;tempXmlString is after:-&quot;+tempXmlDoc.OuterXml);&#xD;&#xA;&#xD;&#xA;BillRecMsg=tempXmlDoc;&#xD;&#xA;&#xD;&#xA;" />
+                                    <om:Property Name="ReportToAnalyst" Value="False" />
+                                    <om:Property Name="Name" Value="MessageAssignment_1" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Construct" OID="7f39ebae-24dc-404a-8530-597de79091a2" ParentLink="ComplexStatement_Statement" LowerBound="146.1" HigherBound="152.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ConstructA4SBill" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessageRef" OID="a8b02230-ea06-4b8c-ae2b-86293740c111" ParentLink="Construct_MessageRef" LowerBound="147.43" HigherBound="147.52">
+                                    <om:Property Name="Ref" Value="A4SBillRq" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="Transform" OID="b1f8b699-5dba-4365-bf92-ec0d12f9b2bb" ParentLink="ComplexStatement_Statement" LowerBound="149.1" HigherBound="151.1">
+                                    <om:Property Name="ClassName" Value="A4SADAD.Biller.SCEC.BillUpload.Maps.SCEC_To_A4S" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="SCEC_To_A4S" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="MessagePartRef" OID="2d7b897f-53c6-428e-a374-6afd4166f652" ParentLink="Transform_InputMessagePartRef" LowerBound="150.110" HigherBound="150.120">
+                                        <om:Property Name="MessageRef" Value="BillRecMsg" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_1" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessagePartRef" OID="8177f708-c574-4e89-8ac4-1f1a713d3052" ParentLink="Transform_OutputMessagePartRef" LowerBound="150.48" HigherBound="150.57">
+                                        <om:Property Name="MessageRef" Value="A4SBillRq" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_2" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="53604fc2-472c-4cc0-8260-4d584dc3fabf" ParentLink="ComplexStatement_Statement" LowerBound="152.1" HigherBound="154.1">
+                                <om:Property Name="Expression" Value="A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,&quot;Call A4SADAD&quot;);&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Log Flow" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="610d2cac-2e48-46ad-bd47-5107ae989b01" ParentLink="ComplexStatement_Statement" LowerBound="154.1" HigherBound="157.1">
+                                <om:Property Name="Expression" Value="_xmlDoc=A4SBillRq;&#xD;&#xA;A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(&quot;_xmlDoc is&quot;,_xmlDoc.InnerText);&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="#Log Flow" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Call" OID="05ebb429-d6f7-42e9-8ed7-6766a3a1d10f" ParentLink="ComplexStatement_Statement" LowerBound="157.1" HigherBound="159.1">
+                                <om:Property Name="Identifier" Value="CallOrchestration_1" />
+                                <om:Property Name="Invokee" Value="A4SADAD.Biller.BusinessLogic.Processes.BillUpload.BillingSysOnlineLoadParameterInt" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="CallOrchestration_1" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Parameter" OID="b156f947-4b98-4703-98a1-431241d8c97e" ParentLink="InvokeStatement_Parameter">
+                                    <om:Property Name="Direction" Value="In" />
+                                    <om:Property Name="Name" Value="A4SBillRq" />
+                                    <om:Property Name="Type" Value="A4SADAD.Biller.BusinessLogic.Processes.BillUpload.BillingSys.BillLoadXml" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="Parameter" OID="985daefa-1fb8-42af-a383-624b5ccb060d" ParentLink="InvokeStatement_Parameter">
+                                    <om:Property Name="Direction" Value="Out" />
+                                    <om:Property Name="Name" Value="A4SBillRs" />
+                                    <om:Property Name="Type" Value="A4SADAD.Biller.BusinessLogic.Processes.BillUpload.BillingSys.BillLoadXml" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Decision" OID="0beaca54-f102-45ce-8261-0dc2207c706b" ParentLink="ComplexStatement_Statement" LowerBound="159.1" HigherBound="182.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Success" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="DecisionBranch" OID="790ee330-00fd-4deb-a2f7-0050b8e7d79f" ParentLink="ReallyComplexStatement_Branch" LowerBound="160.33" HigherBound="170.1">
+                                    <om:Property Name="Expression" Value="A4SBillRs.BillLoadRq.BillRec.BillInfo.ErrorMessage==null&#xD;&#xA;||&#xD;&#xA;A4SBillRs.BillLoadRq.BillRec.BillInfo.ErrorMessage==&quot;&quot;" />
+                                    <om:Property Name="IsGhostBranch" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Yes" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="VariableAssignment" OID="cb577d03-78a9-47bd-b355-14d60b6dc193" ParentLink="ComplexStatement_Statement" LowerBound="164.1" HigherBound="167.1">
+                                        <om:Property Name="Expression" Value="XPath=&quot;/*/BillRec[&quot;+System.Convert.ToString(index+1)+&quot;]/BillStatus&quot;;&#xD;&#xA;A4SADAD.Biller.SCEC.Common.Utility.SetNodeValue(confirmationXmlDoc,XPath,0,&quot;Success&quot;);&#xD;&#xA;" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Set Success  Message" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="VariableAssignment" OID="d23c9adc-df88-4d52-9c97-9ad84114ce75" ParentLink="ComplexStatement_Statement" LowerBound="167.1" HigherBound="169.1">
+                                        <om:Property Name="Expression" Value="A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,&quot;Received Success Reponse&quot;);&#xD;&#xA;" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Log Success Response" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="DecisionBranch" OID="7aff06ad-15de-4cfb-9e76-981604941fed" ParentLink="ReallyComplexStatement_Branch">
+                                    <om:Property Name="IsGhostBranch" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Else" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="VariableAssignment" OID="ad13d2c0-9cc0-4903-8036-c464e0eb430b" ParentLink="ComplexStatement_Statement" LowerBound="172.1" HigherBound="179.1">
+                                        <om:Property Name="Expression" Value="ErrorMessage=A4SBillRs.BillLoadRq.BillRec.BillInfo.ErrorMessage;&#xD;&#xA;XPath=&quot;/*/BillRec[&quot;+System.Convert.ToString(index+1)+&quot;]/BillStatus&quot;;&#xD;&#xA;A4SADAD.Biller.SCEC.Common.Utility.SetNodeValue(confirmationXmlDoc,XPath,0,ErrorMessage);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="RejectBills" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="VariableAssignment" OID="90d3ada8-cc3d-4751-bc31-d3586d719f4b" ParentLink="ComplexStatement_Statement" LowerBound="179.1" HigherBound="181.1">
+                                        <om:Property Name="Expression" Value="A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,&quot;Received Failed Reponse:-&quot;+ErrorMessage);&#xD;&#xA;" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Log Success Response" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Catch" OID="b7416396-ad9f-40f4-9650-bd6921f5fcbf" ParentLink="Scope_Catch" LowerBound="185.1" HigherBound="191.1">
+                                <om:Property Name="ExceptionName" Value="ex" />
+                                <om:Property Name="ExceptionType" Value="System.Exception" />
+                                <om:Property Name="IsFaultMessage" Value="False" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="CatchBillLoadError" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="VariableAssignment" OID="cc29b874-3072-4273-bd89-8e695b9a87f3" ParentLink="Catch_Statement" LowerBound="188.1" HigherBound="190.1">
+                                    <om:Property Name="Expression" Value="A4SADAD.Biller.SCEC.Common.Logger.WriteException(ex);" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Log Error" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="59d8b7bb-4f21-4a02-a093-f19f5d6f03ce" ParentLink="ComplexStatement_Statement" LowerBound="193.1" HigherBound="195.1">
+                            <om:Property Name="Expression" Value="A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,&quot;Add Index&quot;);&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Log Flow" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="453ef219-22f0-474e-838b-6d048574823a" ParentLink="ComplexStatement_Statement" LowerBound="195.1" HigherBound="197.1">
+                            <om:Property Name="Expression" Value="index=index+1;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Add Index" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="2c4486aa-2b2b-4afb-a5f6-b2cd5d1109c9" ParentLink="ComplexStatement_Statement" LowerBound="198.1" HigherBound="201.1">
+                        <om:Property Name="Expression" Value="A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,&quot;Construct Confirmation Message&quot;);&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Log Flow" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Construct" OID="98439881-f3f3-40b4-8389-6ca81f2e9e5b" ParentLink="ComplexStatement_Statement" LowerBound="201.1" HigherBound="215.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructConfirmation" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="4998f4cf-8a4c-4e60-ba42-f0b7676da5e0" ParentLink="Construct_MessageRef" LowerBound="202.31" HigherBound="202.45">
+                            <om:Property Name="Ref" Value="ConfrimationRq" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="0245b918-a5c6-4c58-abfd-b24937db5ac9" ParentLink="ComplexStatement_Statement" LowerBound="204.1" HigherBound="214.1">
+                            <om:Property Name="Expression" Value="tempXmlDoc.LoadXml(@&quot;&lt;ns0:ConfirmationRq xmlns:ns0=&quot;&quot;http://A4SADAD.Biller.SCEC.OnlineConfirmation&quot;&quot;&gt;&#xD;&#xA;  &lt;ConfirmOnlineBills ConfirmationMessage=&quot;&quot;0&quot;&quot; /&gt;&#xD;&#xA;&lt;/ns0:ConfirmationRq&gt;&quot;);&#xD;&#xA;&#xD;&#xA;ConfrimationRq=tempXmlDoc;&#xD;&#xA;&#xD;&#xA;ConfrimationRq.ConfirmOnlineBills.ConfirmationMessage=confirmationXmlDoc.OuterXml;&#xD;&#xA;&#xD;&#xA;A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,&quot;Confirmation Message Constructed&quot;);" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="MessageAssignment_2" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="c94b8b6c-27fc-44ed-a529-83a2bc058e63" ParentLink="ComplexStatement_Statement" LowerBound="215.1" HigherBound="217.1">
+                        <om:Property Name="Expression" Value="A4SADAD.Biller.SCEC.BusinessLogic.BillUpload.ConfirmOnlineBills(confirmationXmlDoc);" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConfirmOnlineBills" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="bf879f4a-5924-4915-b14c-576f8a8a73f6" ParentLink="ComplexStatement_Statement" LowerBound="217.1" HigherBound="219.1">
+                        <om:Property Name="Expression" Value="A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,&quot;Exit&quot;);" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Log Exit" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Catch" OID="15400c4a-f42f-4a39-a8a9-733233472c9f" ParentLink="Scope_Catch" LowerBound="222.1" HigherBound="228.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="CatchException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="230502bb-0ad6-45c4-857d-ce2f9103e957" ParentLink="Catch_Statement" LowerBound="225.1" HigherBound="227.1">
+                            <om:Property Name="Expression" Value="A4SADAD.Biller.SCEC.Common.Logger.WriteException(ex);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Log Error" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="22c14dbf-5310-4092-9f38-ea375fa74760" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="42.1" HigherBound="44.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="A4SADAD.Biller.SCEC.BillUpload.SQLKAUBills" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SQLBillsPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="5037bcaa-bec1-4e6e-96ce-00b64a8b3d72" ParentLink="PortDeclaration_CLRAttribute" LowerBound="42.1" HigherBound="43.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module A4SADAD.Biller.SCEC.BillUpload
+{
+    internal porttype SQLKAUBills
+    {
+        oneway ReceiveBillsFromIS
+        {
+            OnlineBills
+        };
+    };
+    internal porttype XMLBills
+    {
+        oneway SendXmlToA4s
+        {
+            A4SADAD.Biller.BusinessLogic.Processes.BillUpload.BillingSys.BillLoadXml
+        };
+    };
+    internal porttype OnlineConfirmationType
+    {
+        requestresponse Operation_1
+        {
+            OnlineConfirmation.ConfirmationRq, OnlineConfirmation.ConfirmationRs
+        };
+    };
+    internal porttype SQLOnlineConfirmation
+    {
+        requestresponse Operation_1
+        {
+            OnlineConfirmation.ConfirmationRq, OnlineConfirmation.ConfirmationRs
+        };
+    };
+    internal porttype PortType_3
+    {
+        oneway Operation_1
+        {
+            BatchBills
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service GetOnlineBills
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements SQLKAUBills SQLBillsPort;
+        message OnlineBills ModBillsMsg;
+        message A4SADAD.Biller.BusinessLogic.Processes.BillUpload.BillingSys.BillLoadXml A4SBillRs;
+        message OnlineBills BillsMsg;
+        message A4SADAD.Biller.BusinessLogic.Processes.BillUpload.BillingSys.BillLoadXml A4SBillRq;
+        message BillRec BillRecMsg;
+        message OnlineConfirmation.ConfirmationRq ConfrimationRq;
+        message OnlineConfirmation.ConfirmationRs ConfirmationRs;
+        System.Xml.XmlDocument confirmationXmlDoc;
+        System.String orchestrationName;
+        System.Xml.XmlDocument tempXmlDoc;
+        System.Int32 recordsCount;
+        System.Int32 index;
+        System.String XPath;
+        System.String ErrorMessage;
+        System.Int32 sequenceNumber;
+        System.Boolean tryResend;
+        System.Xml.XmlDocument tempBillsBatch;
+        System.Xml.XmlDocument _xmlDoc;
+        System.String tempXmlString;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e0eb5947-054b-4b87-9038-8518e81f9aaa")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("84e90ca4-8798-46d4-a58d-adead3689be1")]
+                    activate receive (SQLBillsPort.ReceiveBillsFromIS, BillsMsg);
+                    confirmationXmlDoc = new System.Xml.XmlDocument();
+                    orchestrationName = "GetOnlineBills";
+                    tempXmlDoc = new System.Xml.XmlDocument();
+                    XPath = "";
+                    ErrorMessage = "";
+                    tryResend = true;
+                    tempBillsBatch = new System.Xml.XmlDocument();
+                    _xmlDoc = new System.Xml.XmlDocument();
+                    tempXmlString = "";
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("317f2d63-c271-4e73-8d24-a30e689a481f")]
+                    A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,"Enter");
+                    
+                    
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("52602c9d-e6a5-476c-8871-a6b586b3ec7c")]
+                    A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,"Initialize");
+                    index=0;
+                    recordsCount=0;
+                    tryResend=false;
+                    sequenceNumber=0;
+                    tempBillsBatch=BillsMsg;
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("bf46952a-bbde-4d0e-83d9-0ca214d4166c")]
+                    tempBillsBatch=BillsMsg;
+                    tempXmlString=tempBillsBatch.InnerXml;
+                    tempXmlString=tempXmlString.Replace(@"<BillsBatch xmlns=""http://A4SADAD.Biller.SCEC.BillsBatch"">","");
+                                                                                    
+                    tempXmlString=tempXmlString.Replace("</BillsBatch>","");
+                    
+                    
+                    tempBillsBatch.LoadXml(tempXmlString);
+                    
+                    
+                    
+                    
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("f0abaa43-1137-4ca9-96ff-94b1ef29d080")]
+                    construct ModBillsMsg
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("2675a3f5-145e-4e66-b2a9-3ce4ebedd25c")]
+                        ModBillsMsg=tempBillsBatch;
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("7448f23e-236f-4bff-90a3-12903f714008")]
+                    
+                    recordsCount =xpath(ModBillsMsg,"count(/*[local-name()='BillsBatch' and namespace-uri()='http://A4SADAD.Biller.SCEC.BillsBatch']/*[local-name()='BillRec' and namespace-uri()=''])");
+                    A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,"recordsCount=" + recordsCount.ToString());
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("a8626d58-abf3-4cca-bc72-bee9f0feb9d2")]
+                    A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,"Initialize the confirmation Message");
+                    tempXmlDoc=BillsMsg;
+                    confirmationXmlDoc.LoadXml(tempXmlDoc.OuterXml);
+                    A4SADAD.Biller.SCEC.Common.Utility.AddNamespacePrefix("BillsBatch",ref confirmationXmlDoc);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("5cc42272-aed9-42cb-af4d-e164e8910ab2")]
+                    while (index<recordsCount)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("241bbc7c-73e4-45b6-9af7-602a9a8e4d88")]
+                        scope
+                        {
+                            body
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("9e1379a0-5fd3-40ad-85fd-2eaaef28beed")]
+                                A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,"Construct BillRec");
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("ad8596b4-292b-4501-83ea-b3996d58f40b")]
+                                construct BillRecMsg
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("c03cabc5-82b8-47e0-96d3-edbde88d0fe0")]
+                                    XPath="/*[local-name()='BillsBatch' and namespace-uri()='http://A4SADAD.Biller.SCEC.BillsBatch']/*[local-name()='BillRec' and namespace-uri()='']["+System.Convert.ToString(index+1)+"]";
+                                    tempXmlDoc = xpath(BillsMsg,XPath);
+                                    
+                                    A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,"tempXmlDoc is before:-"+tempXmlDoc.OuterXml);
+                                    
+                                    A4SADAD.Biller.SCEC.BusinessLogic.BillUpload.AddBillRecNameSpace(ref tempXmlDoc);
+                                    
+                                    A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,"tempXmlString is after:-"+tempXmlDoc.OuterXml);
+                                    
+                                    BillRecMsg=tempXmlDoc;
+                                    
+                                }
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("7f39ebae-24dc-404a-8530-597de79091a2")]
+                                construct A4SBillRq
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("b1f8b699-5dba-4365-bf92-ec0d12f9b2bb")]
+                                    transform (A4SBillRq) = A4SADAD.Biller.SCEC.BillUpload.Maps.SCEC_To_A4S (BillRecMsg);
+                                }
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("53604fc2-472c-4cc0-8260-4d584dc3fabf")]
+                                A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,"Call A4SADAD");
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("610d2cac-2e48-46ad-bd47-5107ae989b01")]
+                                _xmlDoc=A4SBillRq;
+                                A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog("_xmlDoc is",_xmlDoc.InnerText);
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("05ebb429-d6f7-42e9-8ed7-6766a3a1d10f")]
+                                call A4SADAD.Biller.BusinessLogic.Processes.BillUpload.BillingSysOnlineLoadParameterInt (A4SBillRq, out A4SBillRs);
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("0beaca54-f102-45ce-8261-0dc2207c706b")]
+                                if (A4SBillRs.BillLoadRq.BillRec.BillInfo.ErrorMessage==null
+                                    ||
+                                    A4SBillRs.BillLoadRq.BillRec.BillInfo.ErrorMessage=="")
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("cb577d03-78a9-47bd-b355-14d60b6dc193")]
+                                    XPath="/*/BillRec["+System.Convert.ToString(index+1)+"]/BillStatus";
+                                    A4SADAD.Biller.SCEC.Common.Utility.SetNodeValue(confirmationXmlDoc,XPath,0,"Success");
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("d23c9adc-df88-4d52-9c97-9ad84114ce75")]
+                                    A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,"Received Success Reponse");
+                                }
+                                else 
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("ad13d2c0-9cc0-4903-8036-c464e0eb430b")]
+                                    ErrorMessage=A4SBillRs.BillLoadRq.BillRec.BillInfo.ErrorMessage;
+                                    XPath="/*/BillRec["+System.Convert.ToString(index+1)+"]/BillStatus";
+                                    A4SADAD.Biller.SCEC.Common.Utility.SetNodeValue(confirmationXmlDoc,XPath,0,ErrorMessage);
+                                    
+                                    
+                                    
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("90d3ada8-cc3d-4751-bc31-d3586d719f4b")]
+                                    A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,"Received Failed Reponse:-"+ErrorMessage);
+                                }
+                            }
+                            exceptions
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("b7416396-ad9f-40f4-9650-bd6921f5fcbf")]
+                                catch (System.Exception ex)
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("cc29b874-3072-4273-bd89-8e695b9a87f3")]
+                                    A4SADAD.Biller.SCEC.Common.Logger.WriteException(ex);
+                                }
+                            }
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("59d8b7bb-4f21-4a02-a093-f19f5d6f03ce")]
+                        A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,"Add Index");
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("453ef219-22f0-474e-838b-6d048574823a")]
+                        index=index+1;
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("2c4486aa-2b2b-4afb-a5f6-b2cd5d1109c9")]
+                    A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,"Construct Confirmation Message");
+                    
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("98439881-f3f3-40b4-8389-6ca81f2e9e5b")]
+                    construct ConfrimationRq
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("0245b918-a5c6-4c58-abfd-b24937db5ac9")]
+                        tempXmlDoc.LoadXml(@"<ns0:ConfirmationRq xmlns:ns0=""http://A4SADAD.Biller.SCEC.OnlineConfirmation"">
+                          <ConfirmOnlineBills ConfirmationMessage=""0"" />
+                        </ns0:ConfirmationRq>");
+                        
+                        ConfrimationRq=tempXmlDoc;
+                        
+                        ConfrimationRq.ConfirmOnlineBills.ConfirmationMessage=confirmationXmlDoc.OuterXml;
+                        
+                        A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,"Confirmation Message Constructed");
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("c94b8b6c-27fc-44ed-a529-83a2bc058e63")]
+                    A4SADAD.Biller.SCEC.BusinessLogic.BillUpload.ConfirmOnlineBills(confirmationXmlDoc);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("bf879f4a-5924-4915-b14c-576f8a8a73f6")]
+                    A4SADAD.Biller.SCEC.Common.Logger.WriteOrchestrationLog(orchestrationName,"Exit");
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("15400c4a-f42f-4a39-a8a9-733233472c9f")]
+                    catch (System.Exception ex)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("230502bb-0ad6-45c4-857d-ce2f9103e957")]
+                        A4SADAD.Biller.SCEC.Common.Logger.WriteException(ex);
+                    }
+                }
+            }
+        }
+    }
+}
+
